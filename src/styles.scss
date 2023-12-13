@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-navy {
+    background-color: #181F3D;
+}
+
+.text-blue {
+    color: #4663ac;
+}
+
+.link-blue {
+    color: #4663ac!important;
+}
+
+.link-blue:hover {
+    color: #344b85!important;
+}
+
+.btn {
+    border-radius: 3px;
+}
+
+.btn-primary {
+    background-color: #4663ac;
+    border-color: #4663ac;
+}
+
+.btn-primary:hover {
+    background-color: #344b85;
+    border-color: #2a3f75;
+}

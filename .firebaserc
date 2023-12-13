@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "buzzed-66c3a": {
+      "hosting": {
+        "buzzer": [
+          "buzzed-66c3a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "buzzed-66c3a"
+  }
+}

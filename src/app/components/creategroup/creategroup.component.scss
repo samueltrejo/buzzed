@@ -1,0 +1,34 @@
+.btn-primary {
+    background-color: #4663ac;
+    border-color: #4663ac;
+}
+
+.btn-primary:hover {
+    background-color: #344b85;
+    border-color: #2a3f75;
+}
+
+input {
+    background-color: #232C51;
+    border-color: #232C51;
+    color: #b9caf7;
+}
+
+input:focus {
+    background-color: #232C51;
+    border-color: #232C51;
+    color: #b9caf7;
+    box-shadow: 0 0 0 0.25rem #2a3f75
+}
+
+input::placeholder {
+    color: #4663ac48;
+}
+
+.tag {
+    cursor: pointer;
+}
+
+.tag:hover {
+    color: #b9caf7;
+}

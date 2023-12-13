@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "buzzer",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
