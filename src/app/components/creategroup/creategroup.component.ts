@@ -17,7 +17,7 @@ import { FormControl, FormGroup } from '@angular/forms';
             <div class="row g-3">
               <div class="col-sm-12">
                 <label for="group" class="form-label">Group name</label>
-                <input type="text" class="form-control" id="group" autocomplete="off" required>
+                <input type="text" class="form-control" id="group" autocomplete="off" formControlName="name" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
@@ -34,7 +34,7 @@ import { FormControl, FormGroup } from '@angular/forms';
                 <form [formGroup]="tagsForm" ngNativeValidate (ngSubmit)="onTagSubmit()">
                     <label for="tag" class="form-label">Tags <span>(Optional)</span></label>
                     <div class="text-blue mb-2">
-                      <span *ngFor="let tag of this.groupForm.get('tags')?.value" class="tag me-2" (click)="removeTag()"><i class="bi bi-x-square-fill me-1"></i>{{tag}}</span>
+                      <span *ngFor="let tag of this.groupForm.get('tags')?.value" class="tag me-2" (click)="removeTag(tag)"><i class="bi bi-x-square-fill me-1"></i>{{tag}}</span>
                     </div>
                     <input type="text" class="form-control" id="tag" autocomplete="off" formControlName="tag">
                     <div class="invalid-feedback">
@@ -60,7 +60,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class CreategroupComponent {
   groupForm = new FormGroup({
     name: new FormControl<string>(''),
-    tags: new FormControl<string[]>(['test', 'tes']),
+    tags: new FormControl<string[]>([]),
   });
 
   tagsForm = new FormGroup({
@@ -78,14 +78,12 @@ export class CreategroupComponent {
     this.tagsForm.controls['tag'].setValue('');
   }
 
-  removeTag() {
-    const tagToRemove = this.tagsForm.get('tag')?.value;
-    console.log(tagToRemove);
-    let tags = this.groupForm.get('tags')?.value?.filter(x => x !== tagToRemove);
+  removeTag(tag: string) {
+    let tags = this.groupForm.get('tags')?.value?.filter(x => x !== tag);
     this.groupForm.controls['tags'].setValue(tags ?? []);
   }
 
   onSubmit() {
-    console.log('test');
+    console.log(this.groupForm.value);
   }
 }
